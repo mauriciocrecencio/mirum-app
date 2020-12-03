@@ -1,4 +1,5 @@
 body {
+  background-color: #25172A;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +11,22 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.tsparticles-canvas-el {
+  z-index: -1;
+  position: fixed;
+}
+
+main {
+  height: 100vh;
+}
+
+button {
+  font-size: 48px;
+  color: white;
+  border: none;
+  background-color: transparent;
+  width: 100px;
+  height: 40px;
 }
