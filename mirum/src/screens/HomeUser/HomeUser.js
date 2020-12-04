@@ -1,14 +1,20 @@
 import React from "react";
-import "./HomeUser.css";
+import "./HomeUser.scss";
 
 class HomeUser extends React.Component {
- 
-
   render() {
     return (
-      <main className="button">
-        <button onClick={() => this.props.handlePage('/register')}>Cadastrar</button>
-      </main>
+      <div className="container__home">
+        <strong>Parabéns, você é nosso visitante número 1.000.000!</strong>
+        <strong>
+          Cadastre-se agora e receba seu prêmio no conforto de sua casa
+        </strong>
+        <div className="container__button">
+          <button className="button__register" onClick={() => this.props.handlePage("/register")}>
+            Cadastro
+          </button>
+        </div>
+      </div>
     );
   }
 }
