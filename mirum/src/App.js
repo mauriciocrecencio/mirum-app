@@ -18,13 +18,12 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <ParticlesBackground/>
         <Switch>
           <Route path="/" exact>
             <HomeUser handlePage={this.handlePage} />
           </Route>
           <Route path="/register">
-            <Register/>
+            <Register handlePage={this.handlePage}/>
           </Route>
           <Route path="/confirm"></Route>
 
