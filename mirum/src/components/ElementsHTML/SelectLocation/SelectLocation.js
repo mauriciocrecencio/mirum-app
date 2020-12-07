@@ -22,7 +22,6 @@ class SelectLocation extends React.Component {
     return (
       <div>
         <Label for="country" label="País" />
-
         <select
           required
           name="country"

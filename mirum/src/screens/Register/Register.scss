@@ -1,12 +1,13 @@
 .container {
   &__register {
     display: flex;
-    height: 600px;
+    height: 550px;
     width: 1000px;
     background-color: white;
     margin: 6% 20%;
     border-radius: 10px;
-    // justify-content: center;
+    justify-content: center;
+    align-items: center;
     z-index: 10;
 
   }

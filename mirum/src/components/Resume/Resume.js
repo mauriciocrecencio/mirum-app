@@ -38,7 +38,7 @@ class Resume extends React.Component {
         <br />
         <br />
         <br />
-        <button id="button">Confirmar </button>
+        <button onClick={() => this.props.handlePage('/finish')} id="button">Confirmar </button>
       </section>
     );
   }

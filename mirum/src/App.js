@@ -10,6 +10,7 @@ import ParticlesBackground from "./components/ParticlesBackground/ParticlesBackg
 import HomeUser from "./screens/HomeUser/HomeUser";
 import Register from "./screens/Register/Register.js";
 import Confirm from "./screens/Confirm/Confirm";
+import Finish from './screens/Finish/Finish'
 
 class App extends React.Component {
   handlePage = (url) => {
@@ -28,7 +29,10 @@ class App extends React.Component {
             <Register handlePage={this.handlePage} />
           </Route>
           <Route path="/confirm">
-            <Confirm history={this.props.history} />
+            <Confirm handlePage={this.handlePage} history={this.props.history} />
+          </Route>
+          <Route path="/finish">
+            <Finish history={this.props.history} />
           </Route>
         </Switch>
       </main>

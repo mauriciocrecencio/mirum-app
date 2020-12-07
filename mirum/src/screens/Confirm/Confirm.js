@@ -31,7 +31,7 @@ class Confirm extends React.Component {
         </section>
         <div className="vertical__row" />
 
-        <Resume user={this.props.user} />
+        <Resume handlePage={this.props.handlePage} user={this.props.user} />
       </div>
     );
   }

@@ -1,5 +1,5 @@
 body {
-  background-color: #25172a !important;
+  background-color: #25172A !important;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -26,3 +26,18 @@ main {
 .container__home {
   z-index: 10;
 }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: grey !important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: grey !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: grey !important;
+}
+/* select {
+  color: #9e9e9e !important;
+} */

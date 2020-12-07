@@ -7,9 +7,9 @@ class HomeUser extends React.Component {
     return (
      
         <div className="container__home">
-          <strong>Parabéns, você é nosso visitante número 1.000.000!</strong>
+          <strong>Parabéns, você é nosso visitante número <span style={{color: '#E8B648'}}>1.000.000</span>!</strong>
           <strong>
-            Cadastre-se agora e receba seu prêmio no conforto de sua casa
+            Cadastre-se agora e receba <span style={{color: '#E8B648'}}>seu prêmio</span> no conforto de sua casa
           </strong>
           <div className="container__button">
             <button

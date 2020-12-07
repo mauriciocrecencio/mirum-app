@@ -26,14 +26,17 @@
   .button__register:hover {
     border-radius: 30px;
     cursor: pointer;
-    background-color: #1003ff;
+    background-color: #449DD1;
     color: black;
-    font-weight: 900;
+
+    // font-weight: 900;
     letter-spacing: 1px;
   }
   
   .button__register {
-    background-color: #7c8ae3;
+    color: white;
+
+    background-color: #192BC2;
   
     border-radius: 30px;
     display: flex;
@@ -44,10 +47,10 @@
   }
   strong {
     font-size: 36px;
-    color: #8e03ff;
+    color: #449DD1;
   }
   strong:first-child {
-    color: #03e6ff;
+    color: #192BC2;
   }
   
 }
