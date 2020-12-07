@@ -32,21 +32,18 @@ const marks = [
   },
 ];
 
-function valuetext(value) {
-  return `${value}°C`;
-}
-
 export default function DiscreteSlider(props) {
   const classes = useStyles();
-
+ 
   return (
     <div className={classes.root}>
       <Typography id="discrete-slider-custom" gutterBottom>
         Idade
       </Typography>
       <Slider
-        defaultValue={0}
-        getAriaValueText={props.getSliderValue}
+        defaultValue={props.defaultValue}
+        // getAriaValueText={props.getSliderValue}
+        onChangeCommitted={props.getSliderValue}
         aria-labelledby="discrete-slider-custom"
         step={0}
         valueLabelDisplay="off"
