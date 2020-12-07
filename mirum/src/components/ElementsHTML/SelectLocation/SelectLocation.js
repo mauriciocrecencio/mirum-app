@@ -1,36 +1,68 @@
 import React from "react";
+import * as countries from "../../../resources/countries.json";
+import * as states from "../../../resources/states.json";
+import Label from "../Label/Label";
 
-export const urlAPI = "https://api.countrystatecity.in/v1/countries";
-export const tokenAPI = "xZESGh_hHsNYNZFAwBD3r8AvXJkI2YLp0nUVO5UqnF9KJ1YECE8du3vFmywIBg8iw7A"
 class SelectLocation extends React.Component {
-  componentDidMount() {
-    const countries = null;
-    const headers = new Headers();
-  //   headers.append("X-CSCAPI-KEY", "aDRqa0FXQXdERlZ3TDFGbHpHdGV4WXJwZmdUMjNqZndMT2puQWJsQw==");
-  //   const requestOptions = {
-  //     method: "GET",
-  //     headers:headers,
-  //     redirect: "follow",
-  //   };
-  //   fetch("https://api.countrystatecity.in/v1/countries", requestOptions)
-  //     .then((response) => response.text())
-  //     .then((result) => console.log(result))
-  //     .catch((error) => console.log("error", error));
-  // }
-     headers.append("auth_token", tokenAPI);
-    const requestOptions = {
-      method: "GET",
-      headers,
-      redirect: "follow",
-    };
-    fetch("https://www.universal-tutorial.com/api/countries/", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
-  }
-  
+  state = {
+    country: this.props.defaultCountry ?? null,
+    state: this.props.defaultState ?? null,
+  };
+
+  onSelect = (field) => {
+    const e = document.getElementById(field);
+    const location = e.value;
+    this.setState({ ...this.state, [field]: location });
+    this.props.getCountryAndState(field, this.state);
+  };
+
   render() {
-    return <div>Selection</div>;
+    const countriesArray = countries.default.countries;
+    const statesArray = states.default.states;
+    return (
+      <div>
+        <Label for="country" label="País" />
+
+        <select
+          name="country"
+          id="country"
+          onChange={() => this.onSelect("country")}
+          defaultValue={this.props.defaultCountry}
+        >
+          <option selected disabled hidden>
+            Selecione
+          </option>
+          {countriesArray.map((country, index) => (
+            <option key={index} value={country.id}>
+              {country.name}
+            </option>
+          ))}
+        </select>
+        {this.state.country != null && (
+          <>
+            <Label for="state" label="Estado" />
+
+            <select
+              defaultValue={this.props.defaultState}
+              name="state"
+              id="state"
+              onChange={() => this.onSelect("state")}
+            >
+              <option selected disabled hidden>
+                Selecione
+              </option>
+              {statesArray
+                .filter((state) => state.country_id == this.state.country)
+                .map((state, index) => (
+                  <option key={index} value={state.name}>
+                    {state.name}
+                  </option>
+                ))}
+            </select>
+          </>
+        )}
+      </div>
+    );
   }
 }
 
