@@ -1,7 +1,7 @@
 import React from "react";
-import "./InputImage.scss";
+import "./InputFile.scss";
 
-class ImageFile extends React.Component {
+class InputFile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,14 +12,9 @@ class ImageFile extends React.Component {
 
   buildImgTag() {
     let imgTag = null;
-    if (this.state.imageURI !== null)
-      imgTag = (
-        <div className="row">
-          <div className="small-9 small-centered columns">
-            <img className="thumbnail" src={this.state.imageURI}></img>
-          </div>
-        </div>
-      );
+    if (this.state.imageURI !== null) {
+      imgTag = <img className="thumbnail" src={this.state.imageURI}></img>;
+    }
     return imgTag;
   }
 
@@ -28,6 +23,7 @@ class ImageFile extends React.Component {
       let reader = new FileReader();
       reader.onload = function (ev) {
         this.setState({ imageURI: ev.target.result });
+        this.props.submitPhoto(ev.target.result);
       }.bind(this);
       reader.readAsDataURL(e.target.files[0]);
     }
@@ -35,17 +31,22 @@ class ImageFile extends React.Component {
 
   handleChange(e) {
     this.readURI(e);
-    if (this.props.onChange !== undefined) this.props.onChange(e); 
+    if (this.props.onChange !== undefined) this.props.onChange(e);
   }
 
   render() {
-    const imgTag = this.buildImgTag();
-
+    let imgTag = this.buildImgTag();
+    if (this.props.photo != null) {
+      imgTag = <img className="thumbnail" src={this.props.photo}></img>;
+    }
     return (
-      <div>
-        <div className="container__image">{imgTag}</div>
-        <label htmlFor={this.state.id} className="image__container">
-          Upload an image
+      <div className="container__photo">
+        <label htmlFor={this.state.id} className="photo">
+          {this.props.photo == null ? (
+            <div id="uploadTitle"> Carregue sua foto</div>
+          ) : (
+            imgTag
+          )}
         </label>
         <input
           id={this.state.id}
@@ -57,5 +58,4 @@ class ImageFile extends React.Component {
     );
   }
 }
-export default ImageFile;
-// React.render(<ImageFile />, document.getElementById('app'));
+export default InputFile;
