@@ -2,28 +2,45 @@ p {
   padding-right: 30px;
 }
 .section__field {
-  padding: 20px 0px;
   display: flex;
   align-items: center;
+ 
 }
-.form {
-  select {
-    width: 200px;
-    height: 24px;
-    color: black;
-    background-color: #e8f0fe;
-    border-radius: 4px;
-    border: 1px solid black;
-    margin: 5px;
+.name {
+  padding-top: 44px;
+}
+
+.container {
+  &__form {
+    
+    div {
+      margin-left: 5%;
+    }
+  
+    select {
+      width: 200px;
+      height: 24px;
+      color: black;
+      background-color: #e8f0fe;
+      border-radius: 4px;
+      border: 1px solid black;
+      margin: 5px;
+    }
+    input {
+      // width: 200px;
+      height: 20px;
+      color: black;
+      background-color: #e8f0fe;
+      border-radius: 6px;
+      border: 1px solid black;
+      // border: none;
+      margin: 5px;
+    }
+    
   }
-  input {
-    width: 200px;
-    height: 20px;
-    color: black;
-    background-color: #e8f0fe;
-    border-radius: 4px;
-    border: 1px solid black;
-    margin: 5px;
+  &__checkbox {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -41,4 +58,24 @@ p {
 ::-ms-input-placeholder {
   /* Microsoft Edge */
   color: black;
+}
+#button {
+  margin-top: 8%;
+  color: #2a2317;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  border-radius: 30px;
+  width: 30%;
+  height: 40px;
+  background-color: #7c8ae3;
+  letter-spacing: 1px;
+  &:hover {
+    color: black;
+
+    background-color: #03e6ff;
+    
+    cursor: pointer;
+    border-radius: 30px;
+  }
 }
