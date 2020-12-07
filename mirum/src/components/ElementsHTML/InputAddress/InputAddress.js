@@ -1,13 +1,14 @@
 import React from "react";
 import InputField from "../InputField/InputFIeld";
 import Label from "../Label/Label";
+import './InputeAddress.scss'
 
 class InputAddress extends React.Component {
   render() {
     return (
-      <div>
-        <Label for="street" label="Endereço 1" />
-        <InputField type="text" id="street" placeholder="Rua Batel" />
+      <div className="container__address">
+        <Label for="street" label="Endereço" />
+        <InputField defaultValue={this.props.defaultValue} onChange={this.props.onChange} type="text" id="address"  />
       </div>
     );
   }
