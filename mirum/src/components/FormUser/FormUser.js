@@ -14,7 +14,6 @@ class FormUser extends React.Component {
     super(props);
     const {
       name,
-      surname,
       age,
       email,
       phone,
@@ -27,12 +26,11 @@ class FormUser extends React.Component {
     } = this.props.user;
     this.state = {
       name: name ?? "",
-      surname: surname ?? "",
       age: age ?? "",
       email: email ?? "",
       phone: phone ?? "",
-      typeAddress: typeAddress ?? "",
-      address: address ?? "",
+      typeAddress: typeAddress ?? null,
+      address: address ?? null,
       newsletters: newsletters ?? "",
       state: state ?? null,
       country: country ?? null,
@@ -85,7 +83,6 @@ class FormUser extends React.Component {
 
     const {
       name,
-      surname,
       age,
       email,
       phone,
@@ -104,15 +101,15 @@ class FormUser extends React.Component {
             onChange={this.onChange}
             type="text"
             id="name"
-            placeholder="Primeiro nome"
+            placeholder="Nome completo"
           />
-          <InputField
+          {/* <InputField
             defaultValue={surname}
             onChange={this.onChange}
             type="text"
             id="surname"
             placeholder="Sobrenome"
-          />
+          /> */}
         </div>
         <Slider defaultValue={age} getSliderValue={this.getSliderValue} />
 

@@ -3,7 +3,7 @@ import React from "react";
 class SelectTypeAddress extends React.Component {
   render() {
     return (
-        <select defaultValue={this.props.defaultValue} name="addressType" id="addressType" onChange={() => this.props.onSelectTypeAddress()}>
+        <select required={true} defaultValue={this.props.defaultValue} name="addressType" id="addressType" onChange={() => this.props.onSelectTypeAddress()}>
           <option selected disabled hidden>
             Selecione
           </option>

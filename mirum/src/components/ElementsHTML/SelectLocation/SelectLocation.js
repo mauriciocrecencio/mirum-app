@@ -24,14 +24,13 @@ class SelectLocation extends React.Component {
         <Label for="country" label="País" />
 
         <select
+          required
           name="country"
           id="country"
           onChange={() => this.onSelect("country")}
-          defaultValue={this.props.defaultCountry}
+          // defaultValue={this.props.defaultCountry}
         >
-          <option selected disabled hidden>
-            Selecione
-          </option>
+          <option hidden>Selecione</option>
           {countriesArray.map((country, index) => (
             <option key={index} value={country.id}>
               {country.name}
@@ -43,6 +42,7 @@ class SelectLocation extends React.Component {
             <Label for="state" label="Estado" />
 
             <select
+            required
               defaultValue={this.props.defaultState}
               name="state"
               id="state"

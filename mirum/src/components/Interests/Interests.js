@@ -6,25 +6,20 @@ class Interests extends React.Component {
     interest: "",
     interests: this.props.defaultValue ?? [],
   };
+ 
   onChange = (e) => {
-    if (e.nativeEvent.data == "," || e.nativeEvent.data == 'enter') {
+    if (e.nativeEvent.data == "," || e.nativeEvent.data == "enter") {
       this.setState({
         ...this.state,
         interests: [...this.state.interests, this.state.interest],
         interest: "",
       });
-      ;
-
       document.getElementById("input__interest").value = "";
-      return
-      // return this.props.getInterests(this.state.interests);
+      // Props
+      return;
     }
-    console.log(this.state)
-    this.props.getInterests(this.state.interests);
-
+    // Props
     this.setState({ ...this.state, interest: e.target.value });
-    console.log(this.state)
-
   };
   removeInterest = (e, index) => {
     this.state.interests.splice(index, 1);
@@ -33,9 +28,9 @@ class Interests extends React.Component {
   render() {
     return (
       <div>
-        <label  htmlFor="input__interest">Interesse</label>
+        <label htmlFor="input__interest">Interesse</label>
         <input
-        placeholder="Separe por vígula"
+          placeholder="Separe por vígula"
           id="input__interest"
           type="text"
           onChange={(e) => this.onChange(e)}
