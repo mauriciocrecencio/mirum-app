@@ -6,7 +6,7 @@ class Interests extends React.Component {
     interest: "",
     interests: this.props.defaultValue ?? [],
   };
- 
+
   onChange = (e) => {
     if (e.nativeEvent.data == "," || e.nativeEvent.data == "enter") {
       this.setState({
@@ -21,6 +21,10 @@ class Interests extends React.Component {
     // Props
     this.setState({ ...this.state, interest: e.target.value });
   };
+  async commitChanges(e) {
+    await this.onChange(e);
+    this.props.getInterests(this.state.interests)
+  }
   removeInterest = (e, index) => {
     this.state.interests.splice(index, 1);
     this.setState({ ...this.state, interests: this.state.interests });
@@ -33,7 +37,7 @@ class Interests extends React.Component {
           placeholder="Separe por vígula"
           id="input__interest"
           type="text"
-          onChange={(e) => this.onChange(e)}
+          onChange={(e) => this.commitChanges(e)}
         />
         <div className="box__interest">
           {this.state.interests.map((interest, index) => (

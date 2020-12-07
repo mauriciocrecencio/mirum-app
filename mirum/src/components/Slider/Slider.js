@@ -41,8 +41,7 @@ export default function DiscreteSlider(props) {
         Idade
       </Typography>
       <Slider
-        defaultValue={props.defaultValue}
-        // getAriaValueText={props.getSliderValue}
+        defaultValue={props.defaultValue ?? 0}
         onChangeCommitted={props.getSliderValue}
         aria-labelledby="discrete-slider-custom"
         step={0}

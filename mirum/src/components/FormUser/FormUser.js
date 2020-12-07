@@ -22,11 +22,13 @@ class FormUser extends React.Component {
       newsletters,
       state,
       country,
-      interests
+      interests,
+      surname
     } = this.props.user;
     this.state = {
       name: name ?? "",
-      age: age ?? "",
+      surname: surname?? '',
+      age: age ?? 0,
       email: email ?? "",
       phone: phone ?? "",
       typeAddress: typeAddress ?? null,
@@ -90,7 +92,8 @@ class FormUser extends React.Component {
       address,
       newsletters,
       state,
-      countryId
+      countryId,
+      surname
     } = this.props.user;
     return (
       <form className="container__form" onSubmit={(e) => this.submitForm(e)}>
@@ -101,15 +104,15 @@ class FormUser extends React.Component {
             onChange={this.onChange}
             type="text"
             id="name"
-            placeholder="Nome completo"
+            placeholder="Primeiro nome"
           />
-          {/* <InputField
+          <InputField
             defaultValue={surname}
             onChange={this.onChange}
             type="text"
             id="surname"
             placeholder="Sobrenome"
-          /> */}
+          />
         </div>
         <Slider defaultValue={age} getSliderValue={this.getSliderValue} />
 

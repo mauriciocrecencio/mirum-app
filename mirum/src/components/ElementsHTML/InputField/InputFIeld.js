@@ -14,7 +14,7 @@ class InputField extends React.Component {
             onChange={(e) => this.props.onChange(e, this.props.id)}
             type={this.props.type}
             id={this.props.id}
-            placeholder={"Somente letras sem acento"}
+            placeholder={"Primeiro nome"}
           />
         ) : (
           <input

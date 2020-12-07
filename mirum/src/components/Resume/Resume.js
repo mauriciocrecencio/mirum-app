@@ -22,9 +22,9 @@ class Resume extends React.Component {
    
     return (
       <section className="container__confirm">
-        Eu sou <strong>{name}</strong> e eu tenho{" "}
+        Eu sou <strong>{name + ' '+ surname}</strong> e eu tenho{" "}
         <strong>{formatAge[age]}</strong>.Você pode enviar e-mails para <strong>{email}</strong>. Eu moro no
-        estado do <strong>{state}</strong>, no país <strong>{country}</strong>. Eu gosto muito de <strong>{interests ? interests.map(interest => interest + ', ') : 'Sem interesses'}</strong>
+        estado do <strong>{state}</strong>, no país <strong>{country}</strong>. Eu gosto muito de: <strong>{interests ? interests.map((interest, index) => (index + 1 === interests.length ?  ' e ' + interest : interest + ', ' )) : 'Sem interesses'}</strong>.
       <br/>
       <br/>
 

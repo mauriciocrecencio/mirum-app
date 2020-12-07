@@ -28,7 +28,7 @@ class SelectLocation extends React.Component {
           name="country"
           id="country"
           onChange={() => this.onSelect("country")}
-          // defaultValue={this.props.defaultCountry}
+          defaultValue={this.props.defaultCountry}
         >
           <option hidden>Selecione</option>
           {countriesArray.map((country, index) => (
