@@ -8,7 +8,8 @@ import {
 } from "react-router-dom";
 import ParticlesBackground from "./components/ParticlesBackground/ParticlesBackground";
 import HomeUser from "./screens/HomeUser/HomeUser";
-import Register from './screens/Register/Register.js'
+import Register from "./screens/Register/Register.js";
+import Confirm from "./screens/Confirm/Confirm";
 
 class App extends React.Component {
   handlePage = (url) => {
@@ -18,17 +19,18 @@ class App extends React.Component {
   render() {
     return (
       <main>
+
         <Switch>
           <Route path="/" exact>
             <HomeUser handlePage={this.handlePage} />
           </Route>
           <Route path="/register">
-            <Register handlePage={this.handlePage}/>
+            <Register handlePage={this.handlePage} />
           </Route>
-          <Route path="/confirm"></Route>
-
+          <Route path="/confirm">
+            <Confirm history={this.props.history} />
+          </Route>
         </Switch>
-
       </main>
     );
   }
