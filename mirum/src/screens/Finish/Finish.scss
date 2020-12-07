@@ -1,0 +1,19 @@
+.finish {
+  padding-top: 20%;
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  // width: 40%;
+  height: 20%;
+  z-index: 10;
+  span {
+    font-size: 66px;
+    font-weight: bold;
+    color: #449DD1;
+    &:first-child{
+
+      color: #192BC2;
+    }
+  }
+
+}
