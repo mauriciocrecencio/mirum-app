@@ -1,0 +1,44 @@
+
+.thumbnail {
+  width: 240px;
+  height: 300px;
+  border-radius: 6px;
+
+}
+#input__file {
+  background-color: transparent;
+  border: none;
+}
+.photo:hover {
+  cursor: pointer;
+}
+
+input[type='file'] {
+  display: none
+}
+.image__container {
+  // margin-top: 100px;
+//  padding: 100px;
+width: 240px;
+height: 300px;
+  border: 1px solid black;
+}
+
+.MuiSlider-markLabel {
+  color: black;
+}
+.container {
+  display: flex;
+}
+#uploadTitle {
+  padding: 100px 40px;
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+.container__photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  width: 400px;
+}
