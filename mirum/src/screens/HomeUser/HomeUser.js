@@ -5,8 +5,7 @@ import ParticlesBackground from "../../components/ParticlesBackground/ParticlesB
 class HomeUser extends React.Component {
   render() {
     return (
-      <div>
-        <ParticlesBackground />
+     
         <div className="container__home">
           <strong>Parabéns, você é nosso visitante número 1.000.000!</strong>
           <strong>
@@ -21,7 +20,7 @@ class HomeUser extends React.Component {
             </button>
           </div>
         </div>
-      </div>
+ 
     );
   }
 }
